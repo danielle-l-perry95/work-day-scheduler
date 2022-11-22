@@ -9,29 +9,39 @@ $('#currentDay').text(currentDay.format('dddd, MMMM Do YYYY, h:mm:ss a'))
 
 
 // on save btn click create local storage. Get help from tutor here
-var saveBtn = $('.saveBtn')
-var userText = $('#userText').value
-var userStorage = localStorage.setItem("userText", userText)
-userText.textcontent = userStorage
+// var saveBtn = $('.saveBtn')
+// var userText = $('#userText').value
+// var userStorage = localStorage.setItem("userText", userText)
+// userText.textcontent = userStorage
 
-$('.saveBtn').click(function(e) {
-    e.preventDefault
-    userText.textcontent = userStorage
-    localStorage.getItem("userText", userStorage)
-})
+// $('.saveBtn').click(function(e) {
+//     e.preventDefault
+//     userText.textcontent = userStorage
+//     localStorage.getItem("userText", userStorage)
+// })
+// output = []
+// function submit () {
+//     var input = document.getElementById("userText").value
+//     var output = JSON.parse(localStorage.getItem("output"))
+//     output.push(input)
+//     localStorage.setItem("output", JSON.stringify(output))
+//     document.getElementById("userText").value = ''
+//     document.getElementById("saveData").innerHTML = localStorage.getItem("userText")
 
+// }
+// document.getElementById("saveData").innerHTML = localStorage.getItem("userText")
 
 // display different colors based on the time
-var classStyle = $('form-control')
 var colorChange = function() {
     var currentHour = moment().format('H')
-    var time = $('#09')
-//     for ( i=0; i < time.length; i++) {
-// }
+    var time = $(".input")
+    for ( i=0; i < time.length; i++) {
+     
+}
     if (currentHour === time) {
-        classStyle.addClass("present")
+        $(".input").addClass("present")
     } else if (currentHour > time) {
-        classStyle.addClass("past")
+        $(".input").addClass("past")
     } else
-        classStyle.addClass("future") 
+        $("input").addClass("future") 
 }   
