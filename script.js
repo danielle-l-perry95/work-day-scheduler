@@ -1,8 +1,5 @@
 
 
-// moment(currentTime).format("hh:mm");
-// var currentTime = moment();
-//     console.log("CURRENT TIME: " + moment(currentTime).format("hh:mm"));
 //display current day on webpage
 var currentDay = moment()
 $('#currentDay').text(currentDay.format('dddd, MMMM Do YYYY, h:mm:ss a'))
@@ -30,6 +27,11 @@ $('#currentDay').text(currentDay.format('dddd, MMMM Do YYYY, h:mm:ss a'))
 
 // }
 // document.getElementById("saveData").innerHTML = localStorage.getItem("userText")
+
+
+moment(currentHour).format("hh:mm");
+var currentHour = moment();
+    
 
 // display different colors based on the time
 var colorChange = function() {
