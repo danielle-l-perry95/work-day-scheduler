@@ -29,8 +29,9 @@ $('#currentDay').text(currentDay.format('dddd, MMMM Do YYYY, h:mm:ss a'))
 // document.getElementById("saveData").innerHTML = localStorage.getItem("userText")
 
 
-moment(currentHour).format("hh:mm");
+moment(currentHour).format("HHmm");
 var currentHour = moment();
+console.log(currentHour)
     
 
 // display different colors based on the time
