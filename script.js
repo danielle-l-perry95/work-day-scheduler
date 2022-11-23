@@ -16,35 +16,50 @@ $('#currentDay').text(currentDay.format('dddd, MMMM Do YYYY, h:mm:ss a'))
 //     userText.textcontent = userStorage
 //     localStorage.getItem("userText", userStorage)
 // })
-// output = []
+// var output = []
 // function submit () {
-//     var input = document.getElementById("userText").value
-//     var output = JSON.parse(localStorage.getItem("output"))
+//     console.log(this)
+//     var input = document.querySelector(".userText").value
+//     // var output = JSON.parse(localStorage.getItem("output"))
 //     output.push(input)
+//     console.log(`${input}`)
+//     console.log(input)
 //     localStorage.setItem("output", JSON.stringify(output))
-//     document.getElementById("userText").value = ''
-//     document.getElementById("saveData").innerHTML = localStorage.getItem("userText")
+//     document.querySelector(".userText").value = ''
+//     // document.getElementById("saveData").innerHTML = localStorage.getItem("userText")
 
 // }
+// var userText = $((this)('input').val()) 
+$('.saveBtn').click(function(e) {
+    console.log($(this).siblings('input').val())
+    var userText = $(this).siblings('input').val()
+    var timeEl = $(this).siblings('span').attr('id')
+    localStorage.setItem(timeEl, userText)
+
+})
+//localstorage.getitem
+
 // document.getElementById("saveData").innerHTML = localStorage.getItem("userText")
 
-
+//24 hour variable 
 moment(currentHour).format("HHmm");
 var currentHour = moment();
-console.log(currentHour)
+
     
 
-// display different colors based on the time
+// display different classes based on the time
+// make an array for each hour? 
 var colorChange = function() {
     var currentHour = moment().format('H')
-    var time = $(".input")
-    for ( i=0; i < time.length; i++) {
-     
-}
+    var time = $(".hour")
+    time.forEach( () => {
+
+    })
+  
     if (currentHour === time) {
-        $(".input").addClass("present")
+        $(".hour").addClass("present")
     } else if (currentHour > time) {
-        $(".input").addClass("past")
+        $(".hour").addClass("past")
     } else
-        $("input").addClass("future") 
+        $("hour").addClass("future") 
 }   
