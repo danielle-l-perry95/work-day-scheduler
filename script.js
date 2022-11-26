@@ -5,41 +5,22 @@ var currentDay = moment()
 $('#currentDay').text(currentDay.format('dddd, MMMM Do YYYY, h:mm:ss a'))
 
 
-// on save btn click create local storage. Get help from tutor here
-// var saveBtn = $('.saveBtn')
-// var userText = $('#userText').value
-// var userStorage = localStorage.setItem("userText", userText)
-// userText.textcontent = userStorage
-
-// $('.saveBtn').click(function(e) {
-//     e.preventDefault
-//     userText.textcontent = userStorage
-//     localStorage.getItem("userText", userStorage)
-// })
-// var output = []
-// function submit () {
-//     console.log(this)
-//     var input = document.querySelector(".userText").value
-//     // var output = JSON.parse(localStorage.getItem("output"))
-//     output.push(input)
-//     console.log(`${input}`)
-//     console.log(input)
-//     localStorage.setItem("output", JSON.stringify(output))
-//     document.querySelector(".userText").value = ''
-//     // document.getElementById("saveData").innerHTML = localStorage.getItem("userText")
-
-// }
-// var userText = $((this)('input').val()) 
+//Save input to local storage
 $('.saveBtn').click(function(e) {
+    e.preventDefault()
     console.log($(this).siblings('input').val())
     var userText = $(this).siblings('input').val()
     var timeEl = $(this).siblings('span').attr('id')
     localStorage.setItem(timeEl, userText)
+    // help with tutor on this part 
+    // var output = JSON.parse(localStorage.getItem(timeEl, userText))
+    // if (output !== null) {
+    //     console.log(userText)
+    //     document.querySelector(".userText").innerHTML = userText
+    // }
 
 })
-//localstorage.getitem
 
-// document.getElementById("saveData").innerHTML = localStorage.getItem("userText")
 
 //24 hour variable 
 moment(currentHour).format("HHmm");
