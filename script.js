@@ -13,30 +13,40 @@ $('.saveBtn').click(function(e) {
     var timeEl = $(this).siblings('span').attr('id')
     //save to local storage 
     localStorage.setItem(timeEl, userText)
-    // help with tutor on this part 
-    // var output = JSON.parse(localStorage.getItem(timeEl, userText))
-    // if (output !== null) {
-    //     console.log(userText)
-    //     document.querySelector(".userText").innerHTML = userText
-    // }
+    // This doesn't work. 
+    var output = JSON.parse(localStorage.getItem(timeEl, userText))
+    if (output !== null) {
+        console.log(userText)
+        document.querySelector(".userText").innerHTML = userText
+    }
 
 })
 
 
 
-//24 hour variable 
+// 24 hour variable
 moment(currentHour).format("HHmm");
 var currentHour = moment();
-
-
-timeLoop.forEach (function () {
-    //return the integer of hour 
-    var hourId = parseInt($(this)('span').attr('id'))
-    if (currentHour === hourId) {
+// Array of the hour id's 
+var hourElement = [
+    $('#09'),
+    $('#10'),
+    $('#11'),
+    $('#12'),
+    $('#13'),
+    $('#14'),
+    $('#15'),
+    $('#16'),
+    $('#17'),
+]
+// Loop to add the class based on time This does not work 
+function timeLoop() {
+    hourElement.forEach( () => {
+    if (currentHour === hourElement) {
         $(".hour").removeClass("past")
         $(".hour").removeClass("future")
         $(".hour").addClass("present")
-    } else if (currentHour > hourId) {
+    } else if (currentHour > hourElement) {
         $(".hour").removeClass("future")
         $(".hour").removeClass("present")
         $(".hour").addClass("past")
@@ -44,8 +54,8 @@ timeLoop.forEach (function () {
         $(".hour").removeClass("past")
         $(".hour").removeClass("present")
         $(".hour").addClass("future") 
-})
-timeLoop()
+})} 
+
 
 
 
